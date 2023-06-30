@@ -6,19 +6,10 @@ from django.contrib.auth.models import User
 from .models import Chat
 from django.utils import timezone
 
-openai_api_key = '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'
+openai_api_key = 'YOUR_OPEN_AI_API_KEY'
 openai.api_key = openai_api_key
 
 def ask_openai(message):
-    """response = openai.Completion.create(
-        model = "text-davinci-003",
-        prompt = message,
-        max_tokens = 150,
-        n=1,
-        stop=None,
-        temperature=0.7,
-    )"""
-    # answer = response.choices[0].text.strip()
     response = openai.ChatCompletion.create(
         model = "gpt-3.5-turbo",
         messages = [
